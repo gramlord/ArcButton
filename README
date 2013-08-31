@@ -1,0 +1,13 @@
+The ArcButton library allows you to easily handle tactile buttons.
+
+This library uses the ArcSched scheduler to debounce the button, and
+provides you with simple call-backs for button presses and releases,
+as well as giving you the option to check the state of the button.
+
+Your button must be attached to a pin on one side and ground on
+the other. An internal pullup resister is used to pull the pin
+HIGH will is is not pressed. Pressing the button will ground the pin
+and hence it will read LOW.
+
+You require one ArcButton instance for each button you have,
+and one ArcSched instance that is shared between all ArcButton instances.
