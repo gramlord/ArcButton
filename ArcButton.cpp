@@ -8,8 +8,6 @@
   version 2 as published by the Free Software Foundation.
 */
 
-#include <Arduino.h>
-#include <sys/types.h>
 #include <ArcButton.h>
 #include <ArcSched.h>
 
@@ -65,8 +63,8 @@ void ArcButton::loop() {
 
   stateNow = digitalRead(pin);
   if((stateNow != state) && (! waiting)) {
-    sprintf(name, "_AB%02d", pin);
-    sched->registerFunction(_ArcButtonCheck, this, name, SchedPriorityLow, 10);
+    sprintf(name, "AB%02d", pin);
+    (void) sched->registerFunction(_ArcButtonCheck, this, name, SchedPriorityLow, 10);
     waiting = true;
   }
 }

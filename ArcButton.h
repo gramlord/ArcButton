@@ -9,7 +9,6 @@
 */
 
 #include <Arduino.h>
-#include <sys/types.h>
 #include <ArcSched.h>
 
 #ifndef _ArcButton_h
